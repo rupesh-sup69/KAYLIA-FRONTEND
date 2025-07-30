@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Analysis Tool - Kaylia Skincare</title>
+     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles.css" /> 
+
+    <meta name="description" content="Get personalized skincare recommendations with Kaylia's AI-powered skin analysis tool. Discover your perfect routine in minutes." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fkayliaski4660back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Kaylia</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="skin_analysis.html" style="color: hsl(var(--primary));">Skin Analysis</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="cart.html" aria-label="Cart" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h2l3.6 7.59a1 1 0 0 0 .83.41H19a1 1 0 0 0 .96-.74l3.24-9.49A1 1 0 0 0 22 0H6"/>
+                        </svg>
+                    </a>
+                    <a href="login.html" aria-label="Login" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M2 20c0-4 8-6 10-6s10 2 10 6v2H2v-2z"/>
+                        </svg>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path class="sun" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <circle class="sun" cx="12" cy="12" r="5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding: 3rem 0; background: linear-gradient(135deg, hsl(var(--primary) / 0.05) 0%, hsl(var(--secondary) / 0.1) 100%);">
+            <div class="container">
+                <div style="text-align: center; max-width: 64rem; margin: 0 auto;">
+                                    <div style="margin-bottom: 2rem;">
+                        <div style="display: inline-flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; margin-bottom: 1.5rem;">
+                            <svg style="width: 2rem; height: 2rem; color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h1 style="font-size: 3rem; font-weight: 600; color: hsl(var(--foreground)); margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                        Discover Your <span style="background: var(--gradient-rose); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Perfect</span> Skincare Routine
+                    </h1>
+                    <p style="font-size: 1.125rem; color: hsl(var(--muted-foreground)); max-width: 42rem; margin: 0 auto 2rem;">
+                        Our AI-powered analysis considers your skin type, concerns, lifestyle, and preferences to create a personalized routine that evolves with your needs.
+                    </p>
+                </div>
+
+                <!-- Analysis Benefits -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                    <div style="background: hsl(var(--background)); border-radius: 0.5rem; padding: 1.5rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);">
+                        <div style="width: 3rem; height: 3rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <svg style="width: 1.5rem; height: 1.5rem; color: hsl(var(--primary));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Skin Analysis</h3>
+                        <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Advanced AI identifies your skin type, concerns, and unique characteristics</p>
+                    </div>
+                    <div style="background: hsl(var(--background)); border-radius: 0.5rem; padding: 1.5rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);">
+                        <div style="width: 3rem; height: 3rem; background: hsl(var(--accent) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <svg style="width: 1.5rem; height: 1.5rem; color: hsl(var(--accent));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Personalized Routine</h3>
+                        <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Curated product recommendations tailored to your specific needs</p>
+                    </div>
+                    <div style="background: hsl(var(--background)); border-radius: 0.5rem; padding: 1.5rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);">
+                        <div style="width: 3rem; height: 3rem; background: hsl(var(--success) / 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <svg style="width: 1.5rem; height: 1.5rem; color: hsl(var(--success));" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Progress Tracking</h3>
+                        <p style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Monitor your skin's improvement and adjust routine as needed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Tool Container -->
+        <section class="section" style="padding: 3rem 0;">
+            <div class="container">
+                <div style="max-width: 64rem; margin: 0 auto;">
+                <div style="background: hsl(var(--background)); border-radius: 1rem; box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04); overflow: hidden;">
+                    <!-- Progress Bar -->
+                    <div style="background: hsl(var(--primary) / 0.05); padding: 1rem 1.5rem;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-size: 0.875rem; font-weight: 500; color: hsl(var(--primary));">Step <span id="current-step">1</span> of 5</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">About 3 minutes</span>
+                        </div>
+                        <div style="width: 100%; background: hsl(var(--primary) / 0.1); border-radius: 9999px; height: 0.5rem;">
+                            <div id="progress-bar" style="background: hsl(var(--primary)); height: 0.5rem; border-radius: 9999px; transition: all 0.3s ease-out; width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div style="padding: 2rem;">
+                        <!-- Step 1: Skin Type -->
+                        <div id="step-1" class="step-content">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl font-semibold mb-4">What's your skin type?</h2>
+                                <p class="text-text-secondary">Select the description that best matches your skin's natural characteristics.</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="skin-type-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="normal">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Normal</h3>
+                                            <p class="text-sm text-text-secondary">Balanced, not too oily or dry. Few imperfections and good tolerance to products.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skin-type-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="dry">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Dry</h3>
+                                            <p class="text-sm text-text-secondary">Feels tight, rough, or flaky. May appear dull and show fine lines more easily.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skin-type-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="oily">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Oily</h3>
+                                            <p class="text-sm text-text-secondary">Shiny appearance, enlarged pores, and prone to blackheads and breakouts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skin-type-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="combination">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Combination</h3>
+                                            <p class="text-sm text-text-secondary">Oily T-zone (forehead, nose, chin) with normal to dry cheeks.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 p-4 bg-primary-50 rounded-lg">
+                                <div class="flex items-start space-x-3">
+                                    <svg class="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <div>
+                                        <h4 class="font-medium text-primary mb-1">Why we ask this</h4>
+                                        <p class="text-sm text-text-secondary">Your skin type determines the foundation of your routine. Different skin types need different levels of hydration, oil control, and active ingredients.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Skin Concerns -->
+                        <div id="step-2" class="step-content hidden">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl font-semibold mb-4">What are your main skin concerns?</h2>
+                                <p class="text-text-secondary">Select all that apply. We'll prioritize ingredients to address these concerns.</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="acne">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-error/20 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.268 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Acne & Breakouts</h3>
+                                            <p class="text-sm text-text-secondary">Pimples, blackheads, whiteheads</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="aging">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-warning/20 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Aging & Fine Lines</h3>
+                                            <p class="text-sm text-text-secondary">Wrinkles, loss of firmness</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="hyperpigmentation">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a4 4 0 004-4V5z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Dark Spots & Pigmentation</h3>
+                                            <p class="text-sm text-text-secondary">Uneven skin tone, melasma</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="sensitivity">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Sensitivity & Redness</h3>
+                                            <p class="text-sm text-text-secondary">Irritation, rosacea, reactive skin</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="dryness">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-secondary-200 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Dryness & Dehydration</h3>
+                                            <p class="text-sm text-text-secondary">Flaky, tight, dull skin</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="concern-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="pores">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="w-10 h-10 bg-success/20 rounded-full flex items-center justify-center">
+                                            <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold">Large Pores</h3>
+                                            <p class="text-sm text-text-secondary">Visible, enlarged pores</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Lifestyle Factors -->
+                        <div id="step-3" class="step-content hidden">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl font-semibold mb-4">Tell us about your lifestyle</h2>
+                                <p class="text-text-secondary">These factors help us recommend the right routine intensity and timing.</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-3">How much time do you have for skincare?</label>
+                                    <div class="grid md:grid-cols-3 gap-3">
+                                        <div class="lifestyle-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="minimal">
+                                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <span class="text-primary font-semibold text-sm">5m</span>
+                                            </div>
+                                            <h4 class="font-medium">Minimal</h4>
+                                            <p class="text-xs text-text-secondary">5 minutes or less</p>
+                                        </div>
+                                        <div class="lifestyle-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="moderate">
+                                            <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <span class="text-accent font-semibold text-sm">10m</span>
+                                            </div>
+                                            <h4 class="font-medium">Moderate</h4>
+                                            <p class="text-xs text-text-secondary">5-15 minutes</p>
+                                        </div>
+                                        <div class="lifestyle-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="extensive">
+                                            <div class="w-8 h-8 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <span class="text-success font-semibold text-sm">15m+</span>
+                                            </div>
+                                            <h4 class="font-medium">Extensive</h4>
+                                            <p class="text-xs text-text-secondary">15+ minutes</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-3">What's your experience with skincare?</label>
+                                    <div class="grid md:grid-cols-3 gap-3">
+                                        <div class="experience-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="beginner">
+                                            <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                                </svg>
+                                            </div>
+                                            <h4 class="font-medium">Beginner</h4>
+                                            <p class="text-xs text-text-secondary">New to skincare</p>
+                                        </div>
+                                        <div class="experience-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="intermediate">
+                                            <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                </svg>
+                                            </div>
+                                            <h4 class="font-medium">Intermediate</h4>
+                                            <p class="text-xs text-text-secondary">Some experience</p>
+                                        </div>
+                                        <div class="experience-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick text-center" data-value="advanced">
+                                            <div class="w-8 h-8 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                                                <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                                </svg>
+                                            </div>
+                                            <h4 class="font-medium">Advanced</h4>
+                                            <p class="text-xs text-text-secondary">Very experienced</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-3">Any ingredient sensitivities or allergies?</label>
+                                    <div class="grid md:grid-cols-2 gap-3">
+                                        <div class="sensitivity-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="fragrance">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-error/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Fragrance</span>
+                                            </div>
+                                        </div>
+                                        <div class="sensitivity-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="retinol">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-warning/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Retinol/Retinoids</span>
+                                            </div>
+                                        </div>
+                                        <div class="sensitivity-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="acids">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">AHA/BHA Acids</span>
+                                            </div>
+                                        </div>
+                                        <div class="sensitivity-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="none">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">No known sensitivities</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Current Routine -->
+                        <div id="step-4" class="step-content hidden">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl font-semibold mb-4">What's your current routine?</h2>
+                                <p class="text-text-secondary">Help us understand what you're already using so we can build upon it.</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-3">Current morning routine</label>
+                                    <div class="grid md:grid-cols-2 gap-3">
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="cleanser-am">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Cleanser</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="moisturizer-am">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Moisturizer</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="sunscreen">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-warning/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Sunscreen</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="serum-am">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Serum/Treatment</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-3">Current evening routine</label>
+                                    <div class="grid md:grid-cols-2 gap-3">
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="cleanser-pm">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Cleanser</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="moisturizer-pm">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Moisturizer</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="treatment-pm">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-success/20 rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">Treatment/Serum</span>
+                                            </div>
+                                        </div>
+                                        <div class="routine-card border-2 border-border rounded-lg p-4 cursor-pointer hover:border-primary transition-quick" data-value="none-pm">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-6 h-6 bg-border rounded-full flex items-center justify-center">
+                                                    <svg class="w-3 h-3 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                                    </svg>
+                                                </div>
+                                                <span class="text-sm">No evening routine</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Goals -->
+                        <div id="step-5" class="step-content hidden">
+                            <div class="text-center mb-8">
+                                <h2 class="text-2xl font-semibold mb-4">What are your skincare goals?</h2>
+                                <p class="text-text-secondary">Select your top priorities so we can focus on what matters most to you.</p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="goal-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="prevention">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Prevention</h3>
+                                            <p class="text-sm text-text-secondary">Maintain healthy skin and prevent future concerns</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="goal-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="treatment">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Treatment</h3>
+                                            <p class="text-sm text-text-secondary">Address existing concerns with targeted solutions</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="goal-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="glow">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Radiant Glow</h3>
+                                            <p class="text-sm text-text-secondary">Achieve bright, luminous, healthy-looking skin</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="goal-card border-2 border-border rounded-lg p-6 cursor-pointer hover:border-primary transition-quick" data-value="simplicity">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-12 h-12 bg-secondary-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold mb-2">Simplicity</h3>
+                                            <p class="text-sm text-text-secondary">Easy, effective routine that fits your lifestyle</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results Page -->
+                        <div id="results" class="step-content hidden">
+                            <div class="text-center mb-8">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-success/20 rounded-full mb-6">
+                                    <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <h2 class="text-3xl font-accent font-semibold mb-4">Your Personalized Skin Profile</h2>
+                                <p class="text-text-secondary max-w-2xl mx-auto">Based on your responses, we've created a customized routine designed specifically for your skin's unique needs.</p>
+                            </div>
+
+                            <!-- Skin Profile Summary -->
+                            <div class="bg-primary-50 rounded-lg p-6 mb-8">
+                                <h3 class="font-semibold mb-4 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    </svg>
+                                    Your Skin Profile
+                                </h3>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div>
+                                        <p class="text-sm text-text-secondary">Skin Type</p>
+                                        <p class="font-medium" id="result-skin-type">Combination</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-text-secondary">Primary Concerns</p>
+                                        <p class="font-medium" id="result-concerns">Acne, Large Pores</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-text-secondary">Experience Level</p>
+                                        <p class="font-medium" id="result-experience">Intermediate</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recommended Routine -->
+                            <div class="mb-8">
+                                <h3 class="text-xl font-semibold mb-6">Your Recommended Routine</h3>
+                                
+                                <!-- Morning Routine -->
+                                <div class="bg-white rounded-lg p-6 shadow-subtle mb-6">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-8 h-8 bg-warning/20 rounded-full flex items-center justify-center mr-3">
+                                            <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold">Morning Routine</h4>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-primary-100 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Gentle cleanser" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">Gentle Foaming Cleanser</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Removes impurities without stripping natural oils</p>
+                                                <p class="text-xs text-primary">Key ingredients: Niacinamide, Ceramides</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$28</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-accent-100 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.pexels.com/photos/7755456/pexels-photo-7755456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Niacinamide serum" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo-2020/05/18/16/17/social-media-5187243_1280.png'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">Niacinamide 10% Serum</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Minimizes pores and controls oil production</p>
+                                                <p class="text-xs text-primary">Key ingredients: Niacinamide, Zinc</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$24</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-success/20 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.pixabay.com/photo-2020/05/18/16/17/social-media-5187243_1280.png" alt="Daily moisturizer" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">Daily Hydrating Moisturizer SPF 30</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Lightweight hydration with broad-spectrum protection</p>
+                                                <p class="text-xs text-primary">Key ingredients: Hyaluronic Acid, Zinc Oxide</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$32</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Evening Routine -->
+                                <div class="bg-white rounded-lg p-6 shadow-subtle">
+                                    <div class="flex items-center mb-4">
+                                        <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-semibold">Evening Routine</h4>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-primary-100 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Double cleanser" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">Double Cleansing Oil</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Removes makeup and sunscreen effectively</p>
+                                                <p class="text-xs text-primary">Key ingredients: Jojoba Oil, Vitamin E</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$26</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-accent-100 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.pexels.com/photos/7755456/pexels-photo-7755456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="BHA treatment" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.pixabay.com/photo-2020/05/18/16/17/social-media-5187243_1280.png'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">BHA 2% Treatment</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Unclogs pores and prevents breakouts</p>
+                                                <p class="text-xs text-primary">Key ingredients: Salicylic Acid, Willow Bark</p>
+                                                <p class="text-xs text-warning">Use 2-3 times per week</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$29</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-4">
+                                            <div class="w-12 h-12 bg-success/20 rounded-lg overflow-hidden flex-shrink-0">
+                                                <img src="https://images.pixabay.com/photo-2020/05/18/16/17/social-media-5187243_1280.png" alt="Night moisturizer" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1556228578-8c89e6adf883?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                            </div>
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">Overnight Recovery Cream</h5>
+                                                <p class="text-sm text-text-secondary mb-2">Rich hydration for skin repair while you sleep</p>
+                                                <p class="text-xs text-primary">Key ingredients: Peptides, Ceramides</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="font-semibold">$38</p>
+                                                <button class="text-sm text-primary hover:text-primary-600 transition-quick">Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="product_discovery_collections.html" class="btn-primary">
+                                    Shop Complete Routine - $177
+                                </a>
+                                <a href="personal_dashboard.html" class="btn-secondary">
+                                    Save to Dashboard
+                                </a>
+                                <button class="btn-secondary" onclick="window.print()">
+                                    Download Results
+                                </button>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="mt-8 p-6 bg-primary-50 rounded-lg">
+                                <h4 class="font-semibold mb-3">What's Next?</h4>
+                                <ul class="space-y-2 text-sm text-text-secondary">
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        <span>Start with the morning routine for 2 weeks before adding evening treatments</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        <span>Track your progress in your dashboard and adjust routine as needed</span>
+                                    </li>
+                                    <li class="flex items-start space-x-2">
+                                        <svg class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                        <span>Retake this analysis every 3-6 months as your skin changes</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-between mt-8">
+                            <button id="prev-btn" class="btn-secondary opacity-50 cursor-not-allowed" disabled>
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                                Previous
+                            </button>
+                            <button id="next-btn" class="btn-primary opacity-50 cursor-not-allowed" disabled>
+                                Next
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content new-footer">
+                <div class="footer-col footer-brand">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="display: inline-block; width: 2.25rem; height: 2.25rem; background: var(--gradient-rose); border-radius: 50%;"></span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: hsl(var(--foreground));">Kaylia</span>
+                    </div>
+                    <p style="max-width: 18rem; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">Premium skincare crafted with natural ingredients and scientific innovation for healthy, radiant skin that glows from within.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4 1.64a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.01-4.52 4.5 0 .35.04.7.11 1.03C7.69 5.4 4.07 3.67 1.64 1.15c-.38.65-.6 1.4-.6 2.2 0 1.52.78 2.86 1.97 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.7 2.16 2.94 4.07 2.97A9.06 9.06 0 0 1 0 19.54 12.8 12.8 0 0 0 6.95 22c8.29 0 12.84-6.87 12.84-12.84 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.59a9.1 9.1 0 0 1-2.6.71A4.48 4.48 0 0 0 23 3z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg>hello@kaylia.com</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M22 16.92V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2.08a2 2 0 0 1 .91-1.68l7-4.2a2 2 0 0 1 2.18 0l7 4.2a2 2 0 0 1 .91 1.68z"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>+1 (555) 123-4567</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M17.657 16.657A8 8 0 1 1 16.657 17.657L12 22l-4.657-4.343A8 8 0 1 1 17.657 16.657z"/></svg>Los Angeles, CA</span></li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Newsletter</div>
+                        <div style="font-size: 0.95rem; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Get skincare tips and exclusive offers</div>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!');">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn" style="background: var(--gradient-rose); color: white; font-weight: 500;">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom new-footer-bottom">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <span>&copy; 2024 Kaylia. All rights reserved.</span>
+                    <div style="display: flex; gap: 2rem; font-size: 1rem; color: hsl(var(--muted-foreground));">
+                        <a href="#" style="color: inherit; text-decoration: none;">Privacy</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Terms</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Functionality -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 5;
+        const userResponses = {};
+
+        // DOM Elements
+        const progressBar = document.getElementById('progress-bar');
+        const currentStepSpan = document.getElementById('current-step');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateUI();
+            attachEventListeners();
+        });
+
+        function attachEventListeners() {
+            // Navigation buttons
+            prevBtn.addEventListener('click', goToPreviousStep);
+            nextBtn.addEventListener('click', goToNextStep);
+
+            // Selection cards
+            attachSelectionListeners('.skin-type-card', 'skinType', false);
+            attachSelectionListeners('.concern-card', 'concerns', true);
+            attachSelectionListeners('.lifestyle-card', 'timeAvailable', false);
+            attachSelectionListeners('.experience-card', 'experience', false);
+            attachSelectionListeners('.sensitivity-card', 'sensitivities', true);
+            attachSelectionListeners('.routine-card', 'currentRoutine', true);
+            attachSelectionListeners('.goal-card', 'goals', true);
+        }
+
+        function attachSelectionListeners(selector, responseKey, multiSelect) {
+            const cards = document.querySelectorAll(selector);
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const value = this.dataset.value;
+                    
+                    if (multiSelect) {
+                        if (!userResponses[responseKey]) {
+                            userResponses[responseKey] = [];
+                        }
+                        
+                        if (this.classList.contains('selected')) {
+                            // Remove selection
+                            this.classList.remove('selected');
+                            this.style.borderColor = '';
+                            this.style.backgroundColor = '';
+                            userResponses[responseKey] = userResponses[responseKey].filter(v => v !== value);
+                        } else {
+                                                    // Add selection
+                        this.classList.add('selected');
+                        this.style.borderColor = 'var(--color-primary)';
+                        this.style.backgroundColor = 'var(--color-primary-50)';
+                        userResponses[responseKey].push(value);
+                        }
+                    } else {
+                        // Single select - remove previous selections
+                        document.querySelectorAll(selector).forEach(c => {
+                            c.classList.remove('selected');
+                            c.style.borderColor = '';
+                            c.style.backgroundColor = '';
+                        });
+                        
+                        // Add current selection
+                        this.classList.add('selected');
+                        this.style.borderColor = 'var(--color-primary)';
+                        this.style.backgroundColor = 'var(--color-primary-50)';
+                        userResponses[responseKey] = value;
+                    }
+                    
+                    updateNextButton();
+                });
+            });
+        }
+
+        function goToPreviousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        function goToNextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateUI();
+            } else if (currentStep === totalSteps) {
+                showResults();
+            }
+        }
+
+        function updateUI() {
+            // Update progress bar
+            const progress = (currentStep / totalSteps) * 100;
+            progressBar.style.width = progress + '%';
+            currentStepSpan.textContent = currentStep;
+
+            // Show/hide steps
+            document.querySelectorAll('.step-content').forEach(step => {
+                step.classList.add('hidden');
+            });
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+            // Update navigation buttons
+            prevBtn.disabled = currentStep === 1;
+            prevBtn.classList.toggle('opacity-50', currentStep === 1);
+            prevBtn.classList.toggle('cursor-not-allowed', currentStep === 1);
+
+            updateNextButton();
+        }
+
+        function updateNextButton() {
+            const hasSelection = checkCurrentStepSelection();
+            nextBtn.disabled = !hasSelection;
+            nextBtn.classList.toggle('opacity-50', !hasSelection);
+            nextBtn.classList.toggle('cursor-not-allowed', !hasSelection);
+
+            if (currentStep === totalSteps) {
+                nextBtn.textContent = 'Get My Results';
+                nextBtn.innerHTML = 'Get My Results <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>';
+            } else {
+                nextBtn.innerHTML = 'Next <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
+            }
+        }
+
+        function checkCurrentStepSelection() {
+            switch(currentStep) {
+                case 1:
+                    return userResponses.skinType;
+                case 2:
+                    return userResponses.concerns && userResponses.concerns.length > 0;
+                case 3:
+                    return userResponses.timeAvailable && userResponses.experience;
+                case 4:
+                    return userResponses.currentRoutine && userResponses.currentRoutine.length > 0;
+                case 5:
+                    return userResponses.goals && userResponses.goals.length > 0;
+                default:
+                    return false;
+            }
+        }
+
+        function showResults() {
+            // Hide all steps and show results
+            document.querySelectorAll('.step-content').forEach(step => {
+                step.classList.add('hidden');
+            });
+            document.getElementById('results').classList.remove('hidden');
+
+            // Hide navigation buttons
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+
+            // Update progress bar to 100%
+            progressBar.style.width = '100%';
+            currentStepSpan.textContent = 'Complete';
+
+            // Populate results
+            populateResults();
+        }
+
+        function populateResults() {
+            // Update skin profile
+            document.getElementById('result-skin-type').textContent = 
+                userResponses.skinType ? userResponses.skinType.charAt(0).toUpperCase() + userResponses.skinType.slice(1) : 'Not specified';
+            
+            document.getElementById('result-concerns').textContent = 
+                userResponses.concerns ? userResponses.concerns.join(', ') : 'None specified';
+            
+            document.getElementById('result-experience').textContent = 
+                userResponses.experience ? userResponses.experience.charAt(0).toUpperCase() + userResponses.experience.slice(1) : 'Not specified';
+        }
+
+        // Mobile swipe functionality
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            if (!startX || !startY) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+
+            // Only trigger swipe if horizontal movement is greater than vertical
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (Math.abs(diffX) > 50) { // Minimum swipe distance
+                    if (diffX > 0 && !nextBtn.disabled) {
+                        // Swipe left - next step
+                        goToNextStep();
+                    } else if (diffX < 0 && !prevBtn.disabled) {
+                        // Swipe right - previous step
+                        goToPreviousStep();
+                    }
+                }
+            }
+
+            startX = 0;
+            startY = 0;
+        });
+    </script>
+</body>
+</html>

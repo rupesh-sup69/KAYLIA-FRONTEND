@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kaylia Skincare</title>
+    <meta name="description" content="Learn about Kaylia's mission to provide premium, natural skincare solutions. Discover our story, values, and commitment to clean beauty.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-about {
+            padding: 6rem 0;
+            background: var(--gradient-cream);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-item {
+            padding: 2rem;
+            background: hsl(var(--card));
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .value-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--gradient-rose);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: hsl(var(--card));
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .team-photo {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 4px solid hsl(var(--primary) / 0.1);
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: hsl(var(--primary));
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: hsl(var(--border));
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-content {
+            background: hsl(var(--card));
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-soft);
+            width: calc(50% - 2rem);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-year {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 1rem;
+            width: 1rem;
+            height: 1rem;
+            background: hsl(var(--primary));
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid hsl(var(--background));
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 4rem);
+                margin-left: 4rem !important;
+            }
+            
+            .timeline-dot {
+                left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Kaylia</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="skin_analysis.html">Skin Analysis</a></li>
+                        <li><a href="about.html" style="color: hsl(var(--primary));">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="cart.html" aria-label="Cart" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h2l3.6 7.59a1 1 0 0 0 .83.41H19a1 1 0 0 0 .96-.74l3.24-9.49A1 1 0 0 0 22 0H6"/>
+                        </svg>
+                    </a>
+                    <a href="login.html" aria-label="Login" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M2 20c0-4 8-6 10-6s10 2 10 6v2H2v-2z"/>
+                        </svg>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path class="sun" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <circle class="sun" cx="12" cy="12" r="5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-about">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="font-serif" style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                    Our Story
+                </h1>
+                <p style="font-size: 1.25rem; color: hsl(var(--muted-foreground)); max-width: 40rem; margin: 0 auto 2rem;">
+                    Founded on the belief that everyone deserves access to clean, effective skincare, 
+                    Kaylia combines nature's finest ingredients with cutting-edge science.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-md-2" style="align-items: center; gap: 4rem;">
+                <div>
+                    <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                        Our Mission
+                    </h2>
+                    <p style="font-size: 1.125rem; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem; line-height: 1.7;">
+                        At Kaylia, we're committed to revolutionizing skincare by creating products that are both 
+                        luxurious and accessible. We believe that effective skincare shouldn't compromise your 
+                        health or the environment.
+                    </p>
+                    <p style="font-size: 1.125rem; color: hsl(var(--muted-foreground)); line-height: 1.7;">
+                        Every product is carefully formulated with clinically-proven ingredients, sourced 
+                        ethically, and tested for safety and efficacy. We're not just a skincare brand—we're 
+                        your partners in achieving healthy, radiant skin.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Kaylia skincare products" 
+                         style="width: 100%; height: 400px; object-fit: cover; border-radius: 0.5rem;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-weight: 500;">Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-weight: 500;">Natural Ingredients</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-weight: 500;">Years of Research</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-weight: 500;">Premium Products</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                    Our Values
+                </h2>
+                <p style="font-size: 1.25rem; color: hsl(var(--muted-foreground)); max-width: 32rem; margin: 0 auto;">
+                    The principles that guide everything we do
+                </p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Quality First</h3>
+                    <p class="text-muted">We never compromise on quality. Every ingredient is carefully selected and every product rigorously tested.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M7 13c3 0 5.5-2.5 5.5-6S10 1 7 1 1.5 3.5 1.5 7 4 13 7 13zM22 20.6L13.4 12c-.3-.3-.7-.3-1 0L8 16.6"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Natural Beauty</h3>
+                    <p class="text-muted">We harness the power of nature with botanical extracts and organic compounds for gentle yet effective results.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4"/>
+                            <circle cx="12" cy="12" r="9"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Transparency</h3>
+                    <p class="text-muted">We believe in complete transparency about our ingredients, processes, and the science behind our formulations.</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <svg width="24" height="24" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Sustainability</h3>
+                    <p class="text-muted">Our commitment to the environment includes eco-friendly packaging and sustainable sourcing practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section section-muted">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                    Our Journey
+                </h2>
+                <p style="font-size: 1.25rem; color: hsl(var(--muted-foreground)); max-width: 32rem; margin: 0 auto;">
+                    From a small lab to a global brand
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019</div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">The Beginning</h3>
+                        <p class="text-muted">Founded by skincare enthusiasts with a vision to create clean, effective products for everyone.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">First Products</h3>
+                        <p class="text-muted">Launched our signature Vitamin C serum and Hyaluronic Acid moisturizer to immediate acclaim.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Global Expansion</h3>
+                        <p class="text-muted">Expanded internationally and reached over 25,000 satisfied customers worldwide.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Innovation Continues</h3>
+                        <p class="text-muted">Introducing advanced formulations and sustainable packaging solutions for the future of skincare.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">
+                    Meet Our Team
+                </h2>
+                <p style="font-size: 1.25rem; color: hsl(var(--muted-foreground)); max-width: 32rem; margin: 0 auto;">
+                    The passionate individuals behind Kaylia
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Sarah Johnson" class="team-photo">
+                    <div class="team-name">Sarah Johnson</div>
+                    <div class="team-role">Founder & CEO</div>
+                    <p class="text-muted">Dermatologist with 15+ years of experience in skincare formulation and clean beauty advocacy.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Michael Chen" class="team-photo">
+                    <div class="team-name">Michael Chen</div>
+                    <div class="team-role">Chief Science Officer</div>
+                    <p class="text-muted">Biochemist specializing in natural ingredient research and product efficacy testing.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Emma Rodriguez" class="team-photo">
+                    <div class="team-name">Emma Rodriguez</div>
+                    <div class="team-role">Head of Sustainability</div>
+                    <p class="text-muted">Environmental scientist dedicated to sustainable practices and eco-friendly packaging solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section" style="background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">
+                    Join the Kaylia Community
+                </h2>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 32rem; margin-left: auto; margin-right: auto; opacity: 0.9;">
+                    Experience the difference that clean, effective skincare can make for your skin.
+                </p>
+                <a href="products.html" class="btn btn-lg" style="background: white; color: hsl(var(--primary)); padding: 0.75rem 2rem;">
+                    Shop Our Products
+                    <svg style="margin-left: 0.5rem;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content new-footer">
+                <div class="footer-col footer-brand">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="display: inline-block; width: 2.25rem; height: 2.25rem; background: var(--gradient-rose); border-radius: 50%;"></span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: hsl(var(--foreground));">Kaylia</span>
+                    </div>
+                    <p style="max-width: 18rem; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">Premium skincare crafted with natural ingredients and scientific innovation for healthy, radiant skin that glows from within.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4 1.64a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.01-4.52 4.5 0 .35.04.7.11 1.03C7.69 5.4 4.07 3.67 1.64 1.15c-.38.65-.6 1.4-.6 2.2 0 1.52.78 2.86 1.97 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.7 2.16 2.94 4.07 2.97A9.06 9.06 0 0 1 0 19.54 12.8 12.8 0 0 0 6.95 22c8.29 0 12.84-6.87 12.84-12.84 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.59a9.1 9.1 0 0 1-2.6.71A4.48 4.48 0 0 0 23 3z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg>hello@kaylia.com</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M22 16.92V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2.08a2 2 0 0 1 .91-1.68l7-4.2a2 2 0 0 1 2.18 0l7 4.2a2 2 0 0 1 .91 1.68z"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>+1 (555) 123-4567</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M17.657 16.657A8 8 0 1 1 16.657 17.657L12 22l-4.657-4.343A8 8 0 1 1 17.657 16.657z"/></svg>Los Angeles, CA</span></li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Newsletter</div>
+                        <div style="font-size: 0.95rem; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Get skincare tips and exclusive offers</div>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!');">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn" style="background: var(--gradient-rose); color: white; font-weight: 500;">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom new-footer-bottom">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <span>&copy; 2024 Kaylia. All rights reserved.</span>
+                    <div style="display: flex; gap: 2rem; font-size: 1rem; color: hsl(var(--muted-foreground));">
+                        <a href="#" style="color: inherit; text-decoration: none;">Privacy</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Terms</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

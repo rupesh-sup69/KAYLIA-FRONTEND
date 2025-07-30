@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Kaylia Skincare</title>
+    <meta name="description" content="Discover Kaylia's complete collection of premium skincare products. Shop serums, moisturizers, cleansers, and treatments for radiant, healthy skin.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .filters-section {
+            background: hsl(var(--muted) / 0.3);
+            padding: 2rem 0;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .filters-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid hsl(var(--border));
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.875rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            border-color: hsl(var(--primary));
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            max-width: 20rem;
+            width: 100%;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.375rem;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+        }
+        
+        .sort-select {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.375rem;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            cursor: pointer;
+        }
+        
+        .products-section {
+            padding: 3rem 0;
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .results-count {
+            color: hsl(var(--muted-foreground));
+        }
+        
+        @media (max-width: 768px) {
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                justify-content: center;
+            }
+            
+            .products-header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Kaylia</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html" style="color: hsl(var(--primary));">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="skin_analysis.html">Skin Analysis</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <a href="cart.html" aria-label="Cart" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h2l3.6 7.59a1 1 0 0 0 .83.41H19a1 1 0 0 0 .96-.74l3.24-9.49A1 1 0 0 0 22 0H6"/>
+                        </svg>
+                    </a>
+                    <a href="login.html" aria-label="Login" style="margin-right: 1rem;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M2 20c0-4 8-6 10-6s10 2 10 6v2H2v-2z"/>
+                        </svg>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path class="sun" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            <circle class="sun" cx="12" cy="12" r="5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header & Main Layout -->
+    <section class="section" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar -->
+                <aside class="products-sidebar">
+                    <div class="sidebar-group">
+                        <h3>Categories</h3>
+                        <form id="category-filter">
+                            <label><input type="radio" name="category" value="all" checked> All</label>
+                            <label><input type="radio" name="category" value="cleansers"> Cleansers</label>
+                            <label><input type="radio" name="category" value="serums"> Serums</label>
+                            <label><input type="radio" name="category" value="moisturizers"> Moisturizers</label>
+                            <label><input type="radio" name="category" value="treatments"> Treatments</label>
+                            <label><input type="radio" name="category" value="toners"> Toners</label>
+                            <label><input type="radio" name="category" value="eye care"> Eye Care</label>
+                            <label><input type="radio" name="category" value="sunscreen"> Sunscreen</label>
+                        </form>
+                    </div>
+                    <!--
+                    <div class="sidebar-group">
+                        <h3>Key Ingredients</h3>
+                        <form id="ingredients-filter">
+                            <label><input type="checkbox" name="ingredient" value="niacinamide"> Niacinamide</label>
+                            <label><input type="checkbox" name="ingredient" value="hyaluronic-acid"> Hyaluronic Acid</label>
+                            <label><input type="checkbox" name="ingredient" value="vitamin-c"> Vitamin C</label>
+                            <label><input type="checkbox" name="ingredient" value="retinol"> Retinol</label>
+                            <label><input type="checkbox" name="ingredient" value="peptides"> Peptides</label>
+                            <label><input type="checkbox" name="ingredient" value="salicylic-acid"> Salicylic Acid</label>
+                        </form>
+                    </div>  -->
+                    <div class="sidebar-group">
+                        <h3>Price Range</h3>
+                        <form id="price-filter">
+                            <label><input type="checkbox" name="price" value="under-25"> Under $25</label>
+                            <label><input type="checkbox" name="price" value="25-50"> $25 - $50</label>
+                            <label><input type="checkbox" name="price" value="50-100"> $50 - $100</label>
+                            <label><input type="checkbox" name="price" value="over-100"> Over $100</label>
+                        </form>
+                    </div>
+                    <button class="btn btn-outline sidebar-clear" id="clear-filters" type="button">Clear All Filters</button>
+                </aside>
+                <!-- Main Content -->
+                <main class="products-main">
+                    <div class="products-header-row">
+                        <div>
+                            <h1 class="font-serif" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem;">Our Products</h1>
+                            <p style="font-size: 1.1rem; color: hsl(var(--muted-foreground)); max-width: 32rem; margin: 0;">Discover our complete range of premium skincare solutions</p>
+                        </div>
+                        <div class="products-header-controls">
+                            <div class="search-bar">
+                                <input type="text" id="search-input" class="search-input" placeholder="Search products..." onkeyup="searchProducts()">
+                                <button class="btn btn-primary btn-sm" onclick="handleSearch(document.getElementById('search-input').value)">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="11" cy="11" r="8"/>
+                                        <path d="m21 21-4.35-4.35"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <select class="sort-select" onchange="sortProducts(this.value)">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name">Name: A to Z</option>
+                                <option value="rating">Customer Rating</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-count-row">
+                        <span id="results-count">Showing 6 of 6 products</span>
+                    </div>
+                    <div class="product-grid" id="products-container">
+                        <!-- Product 1: Gentle Daily Cleanser -->
+                        <div class="product-card" data-category="cleansers" data-price="32" data-name="Gentle Daily Cleanser" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gentle Daily Cleanser">
+                                <div class="product-badge">Best Seller</div>
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(124)</span>
+                                </div>
+                                <div class="product-tags">Niacinamide, Ceramides</div>
+                                <a href="product-detail.html?product=gentle-daily-cleanser">
+                                    <h3 class="product-title">Gentle Daily Cleanser</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Removes impurities without stripping natural oils</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$32</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 1, name: 'Gentle Daily Cleanser', price: 32, image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 2: Brightening Vitamin C Serum -->
+                        <div class="product-card" data-category="serums" data-price="48" data-name="Brightening Vitamin C Serum" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brightening Vitamin C Serum">
+                                <div class="product-badge">New</div>
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(89)</span>
+                                </div>
+                                <div class="product-tags">Vitamin C, Niacinamide</div>
+                                <a href="product-detail.html?product=brightening-vitamin-c-serum">
+                                    <h3 class="product-title">Brightening Vitamin C Serum</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Reduces dark spots and boosts radiance</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$48</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 2, name: 'Brightening Vitamin C Serum', price: 48, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 3: Hydrating Hyaluronic Moisturizer -->
+                        <div class="product-card" data-category="moisturizers" data-price="42" data-name="Hydrating Hyaluronic Moisturizer" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hydrating Hyaluronic Moisturizer">
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(156)</span>
+                                </div>
+                                <div class="product-tags">Hyaluronic Acid, Ceramides</div>
+                                <a href="product-detail.html?product=hydrating-hyaluronic-moisturizer">
+                                    <h3 class="product-title">Hydrating Hyaluronic Moisturizer</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Intense hydration for plump, dewy skin</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$42</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 3, name: 'Hydrating Hyaluronic Moisturizer', price: 42, image: 'https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 4: Retinol Renewal Treatment -->
+                        <div class="product-card" data-category="treatments" data-price="68" data-name="Retinol Renewal Treatment" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retinol Renewal Treatment">
+                                <div class="product-badge">Limited Stock</div>
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(67)</span>
+                                </div>
+                                <div class="product-tags">Retinol, Peptides</div>
+                                <a href="product-detail.html?product=retinol-renewal-treatment">
+                                    <h3 class="product-title">Retinol Renewal Treatment</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Advanced anti-aging with gentle retinol</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$68</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 4, name: 'Retinol Renewal Treatment', price: 68, image: 'https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 5: Niacinamide Pore Refining Serum -->
+                        <div class="product-card" data-category="serums" data-price="36" data-name="Niacinamide Pore Refining Serum" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Niacinamide Pore Refining Serum">
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(203)</span>
+                                </div>
+                                <div class="product-tags">Niacinamide, Zinc</div>
+                                <a href="product-detail.html?product=niacinamide-pore-refining-serum">
+                                    <h3 class="product-title">Niacinamide Pore Refining Serum</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Minimizes pores and controls oil production</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$36</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 5, name: 'Niacinamide Pore Refining Serum', price: 36, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 6: Peptide Recovery Night Cream -->
+                        <div class="product-card" data-category="moisturizers" data-price="58" data-name="Peptide Recovery Night Cream" data-rating="5.0">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Peptide Recovery Night Cream">
+                                <button class="product-fav" aria-label="Add to wishlist">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product-info">
+                                <div class="star-rating">
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="star filled">★</span>
+                                    <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(78)</span>
+                                </div>
+                                <div class="product-tags">Peptides, Bakuchiol</div>
+                                <a href="product-detail.html?product=peptide-recovery-night-cream">
+                                    <h3 class="product-title">Peptide Recovery Night Cream</h3>
+                                </a>
+                                <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Overnight repair and firming treatment</p>
+                                <div class="product-prices">
+                                    <span class="product-price">$58</span>
+                                </div>
+                                <button class="btn btn-outline btn-sm" onclick="addToCart({id: 6, name: 'Peptide Recovery Night Cream', price: 58, image: 'https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+    <!-- Remove old filters-section and products-section -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content new-footer">
+                <div class="footer-col footer-brand">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="display: inline-block; width: 2.25rem; height: 2.25rem; background: var(--gradient-rose); border-radius: 50%;"></span>
+                        <span style="font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: hsl(var(--foreground));">Kaylia</span>
+                    </div>
+                    <p style="max-width: 18rem; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">Premium skincare crafted with natural ingredients and scientific innovation for healthy, radiant skin that glows from within.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="Facebook" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter" class="footer-social"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4 1.64a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.01-4.52 4.5 0 .35.04.7.11 1.03C7.69 5.4 4.07 3.67 1.64 1.15c-.38.65-.6 1.4-.6 2.2 0 1.52.78 2.86 1.97 3.65A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.55 1.7 2.16 2.94 4.07 2.97A9.06 9.06 0 0 1 0 19.54 12.8 12.8 0 0 0 6.95 22c8.29 0 12.84-6.87 12.84-12.84 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.59a9.1 9.1 0 0 1-2.6.71A4.48 4.48 0 0 0 23 3z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg>hello@kaylia.com</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M22 16.92V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2.08a2 2 0 0 1 .91-1.68l7-4.2a2 2 0 0 1 2.18 0l7 4.2a2 2 0 0 1 .91 1.68z"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>+1 (555) 123-4567</span></li>
+                        <li><span style="display: inline-flex; align-items: center;"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><path d="M17.657 16.657A8 8 0 1 1 16.657 17.657L12 22l-4.657-4.343A8 8 0 1 1 17.657 16.657z"/></svg>Los Angeles, CA</span></li>
+                    </ul>
+                    <div class="footer-newsletter">
+                        <div style="font-weight: 600; margin-bottom: 0.25rem;">Newsletter</div>
+                        <div style="font-size: 0.95rem; color: hsl(var(--muted-foreground)); margin-bottom: 0.5rem;">Get skincare tips and exclusive offers</div>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!');">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn" style="background: var(--gradient-rose); color: white; font-weight: 500;">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom new-footer-bottom">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <span>&copy; 2024 Kaylia. All rights reserved.</span>
+                    <div style="display: flex; gap: 2rem; font-size: 1rem; color: hsl(var(--muted-foreground));">
+                        <a href="#" style="color: inherit; text-decoration: none;">Privacy</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Terms</a>
+                        <a href="#" style="color: inherit; text-decoration: none;">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Product filtering and search functionality
+        let currentFilters = {
+            category: 'all',
+            concerns: [],
+            ingredients: [],
+            price: []
+        };
+
+        function searchProducts() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            applyFilters(searchTerm);
+        }
+
+        function handleSearch(searchTerm) {
+            document.getElementById('search-input').value = searchTerm;
+            searchProducts();
+        }
+
+        function updateResultsCount(count) {
+            const resultsCount = document.getElementById('results-count');
+            resultsCount.textContent = `Showing ${count} of ${document.querySelectorAll('.product-card').length} products`;
+        }
+
+        function applyFilters(searchTerm = '') {
+            const products = document.querySelectorAll('.product-card');
+            let visibleCount = 0;
+
+            products.forEach(product => {
+                const productName = product.dataset.name.toLowerCase();
+                const productCategory = product.dataset.category;
+                const productPrice = parseInt(product.dataset.price);
+                
+                // Check if product matches search term
+                const matchesSearch = !searchTerm || productName.includes(searchTerm.toLowerCase());
+                
+                // Check if product matches category filter
+                const matchesCategory = currentFilters.category === 'all' || productCategory === currentFilters.category;
+                
+                // Check if product matches price filter
+                let matchesPrice = true;
+                if (currentFilters.price.length > 0) {
+                    matchesPrice = currentFilters.price.some(priceRange => {
+                        switch(priceRange) {
+                            case 'under-25': return productPrice < 25;
+                            case '25-50': return productPrice >= 25 && productPrice <= 50;
+                            case '50-100': return productPrice >= 50 && productPrice <= 100;
+                            case 'over-100': return productPrice > 100;
+                            default: return true;
+                        }
+                    });
+                }
+
+                // Show/hide product based on all filters
+                if (matchesSearch && matchesCategory && matchesPrice) {
+                    product.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            updateResultsCount(visibleCount);
+        }
+
+        function sortProducts(sortBy) {
+            const productsContainer = document.getElementById('products-container');
+            const products = Array.from(productsContainer.children);
+
+            products.sort((a, b) => {
+                const nameA = a.dataset.name.toLowerCase();
+                const nameB = b.dataset.name.toLowerCase();
+                const priceA = parseInt(a.dataset.price);
+                const priceB = parseInt(b.dataset.price);
+                const ratingA = parseFloat(a.dataset.rating);
+                const ratingB = parseFloat(b.dataset.rating);
+
+                switch(sortBy) {
+                    case 'price-low':
+                        return priceA - priceB;
+                    case 'price-high':
+                        return priceB - priceA;
+                    case 'name':
+                        return nameA.localeCompare(nameB);
+                    case 'rating':
+                        return ratingB - ratingA;
+                    default:
+                        return 0;
+                }
+            });
+
+            // Re-append sorted products
+            products.forEach(product => productsContainer.appendChild(product));
+        }
+
+        function clearAllFilters() {
+            // Reset all form inputs
+            document.getElementById('category-filter').reset();
+            document.getElementById('concerns-filter').reset();
+            document.getElementById('ingredients-filter').reset();
+            document.getElementById('price-filter').reset();
+            
+            // Reset search input
+            document.getElementById('search-input').value = '';
+            
+            // Reset current filters
+            currentFilters = {
+                category: 'all',
+                concerns: [],
+                ingredients: [],
+                price: []
+            };
+            
+            // Show all products
+            applyFilters();
+        }
+
+        // Event listeners for filter forms
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filter
+            document.getElementById('category-filter').addEventListener('change', function(e) {
+                if (e.target.name === 'category') {
+                    currentFilters.category = e.target.value;
+                    applyFilters();
+                }
+            });
+
+            // Price filter
+            document.getElementById('price-filter').addEventListener('change', function(e) {
+                if (e.target.name === 'price') {
+                    const checkedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked'))
+                        .map(input => input.value);
+                    currentFilters.price = checkedPrices;
+                    applyFilters();
+                }
+            });
+
+            // Clear filters button
+            document.getElementById('clear-filters').addEventListener('click', clearAllFilters);
+
+            // Initialize page
+            const totalProducts = document.querySelectorAll('.product-card').length;
+            updateResultsCount(totalProducts);
+        });
+    </script>
+</body>
+</html>
