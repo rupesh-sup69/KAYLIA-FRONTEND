@@ -7,6 +7,31 @@
     <meta name="description" content="Sign in to your Kaylia account or create a new account to access exclusive skincare products and member benefits.">
     <link rel="stylesheet" href="styles.css">
     <style>
+        .nav-logo {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+        
+        .nav-logo a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: hsl(var(--foreground));
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-logo .logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: var(--gradient-rose);
+            border-radius: 50%;
+        }
+        
         .login-container {
             min-height: 100vh;
             display: flex;
@@ -136,6 +161,14 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Logo -->
+    <div class="nav-logo">
+        <a href="index.html">
+            <div class="logo-icon"></div>
+            <span>Kaylia</span>
+        </a>
+    </div>
+    
     <div class="login-container">
         <div class="login-card">
             <div class="login-header">

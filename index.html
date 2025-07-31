@@ -148,11 +148,16 @@
                 </p>
             </div>
 
-            <div class="grid grid-md-2" style="max-width: 64rem; margin: 0 auto; gap: 2rem;">
-                <div class="product-card">
+            <div class="product-grid" style="max-width: 64rem; margin: 0 auto;">
+                <div class="product-card" data-category="serums" data-price="45" data-name="Vitamin C Brightening Serum" data-rating="4.8">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vitamin C Brightening Serum">
                         <div class="product-badge">Best Seller</div>
+                        <button class="product-fav" aria-label="Add to wishlist">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="product-info">
                         <div class="star-rating">
@@ -163,18 +168,27 @@
                             <span class="star filled">★</span>
                             <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(4.8)</span>
                         </div>
-                        <h3 class="product-title" style="font-size: 1.125rem;">Vitamin C Brightening Serum</h3>
-                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div class="product-tags">Vitamin C, Niacinamide</div>
+                        <a href="product-detail.html">
+                            <h3 class="product-title">Vitamin C Brightening Serum</h3>
+                        </a>
+                        <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Reduces dark spots and boosts radiance</p>
+                        <div class="product-prices">
                             <span class="product-price">$45</span>
-                            <a href="product-detail.html" class="btn btn-outline btn-sm">Add to Cart</a>
                         </div>
+                        <button class="btn btn-outline btn-sm" onclick="addToCart({id: 1, name: 'Vitamin C Brightening Serum', price: 45, image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card" data-category="treatments" data-price="65" data-name="Retinol Renewal Night Cream" data-rating="4.9">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Retinol Renewal Night Cream">
                         <div class="product-badge">New</div>
+                        <button class="product-fav" aria-label="Add to wishlist">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </button>
                     </div>
                     <div class="product-info">
                         <div class="star-rating">
@@ -185,11 +199,15 @@
                             <span class="star filled">★</span>
                             <span class="text-muted" style="margin-left: 0.5rem; font-size: 0.875rem;">(4.9)</span>
                         </div>
-                        <h3 class="product-title" style="font-size: 1.125rem;">Retinol Renewal Night Cream</h3>
-                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <div class="product-tags">Retinol, Peptides</div>
+                        <a href="product-detail.html">
+                            <h3 class="product-title">Retinol Renewal Night Cream</h3>
+                        </a>
+                        <p class="product-description" style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">Advanced anti-aging with gentle retinol</p>
+                        <div class="product-prices">
                             <span class="product-price">$65</span>
-                            <a href="product-detail.html" class="btn btn-outline btn-sm">Add to Cart</a>
                         </div>
+                        <button class="btn btn-outline btn-sm" onclick="addToCart({id: 2, name: 'Retinol Renewal Night Cream', price: 65, image: 'https://images.unsplash.com/photo-1556228578-dd6b68d2bf17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})">Add to Cart</button>
                     </div>
                 </div>
             </div>
