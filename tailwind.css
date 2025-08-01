@@ -6,17 +6,17 @@
 
 :root {
   /* Primary Colors */
-  --color-primary: #7A9B8E; /* sage-500 - Sage authority, scientific trust with natural warmth */
-  --color-primary-50: #F0F4F2; /* sage-50 */
-  --color-primary-100: #D9E5E0; /* sage-100 */
-  --color-primary-200: #B8CFC4; /* sage-200 */
-  --color-primary-300: #97B9A8; /* sage-300 */
-  --color-primary-400: #88AA9A; /* sage-400 */
-  --color-primary-500: #7A9B8E; /* sage-500 */
-  --color-primary-600: #6B8A7D; /* sage-600 */
-  --color-primary-700: #5A7369; /* sage-700 */
-  --color-primary-800: #495C55; /* sage-800 */
-  --color-primary-900: #384541; /* sage-900 */
+  --color-primary: #E6C0B9; /* rose-300 - Warm, soft rose for primary elements */
+  --color-primary-50: #FDF7F6; /* rose-50 */
+  --color-primary-100: #F9EDEA; /* rose-100 */
+  --color-primary-200: #F3D9D3; /* rose-200 */
+  --color-primary-300: #E6C0B9; /* rose-300 */
+  --color-primary-400: #D9A79E; /* rose-400 */
+  --color-primary-500: #CC8E83; /* rose-500 */
+  --color-primary-600: #BF7568; /* rose-600 */
+  --color-primary-700: #B25C4D; /* rose-700 */
+  --color-primary-800: #A54332; /* rose-800 */
+  --color-primary-900: #982A17; /* rose-900 */
 
   /* Secondary Colors */
   --color-secondary: #F4F1ED; /* cream-100 - Soft canvas, premium backdrop for product focus */
